@@ -51,6 +51,7 @@ print ("Pressure: %d" % current["pressure"] )
 wind = data["wind"]
 city = data["name"]
 cursor.execute('''INSERT INTO Weather (wind, city) values (?, ?)''', (int(wind["speed"]),(city)))
+dbconnect.commit()
 cursor.execute('''SELECT * FROM Weather WHERE city = city''',)
 current = data["wind"]
 
